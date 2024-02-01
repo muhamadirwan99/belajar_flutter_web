@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   camera_web: ^0.3.2+4
   camera: ^0.10.5+9
+  geolocator: ^10.1.0
+  dart_pusher_channels: ^1.2.2
 
 dev_dependencies:
   flutter_test:
