@@ -57,6 +57,34 @@ class BerandaView extends StatefulWidget {
                   "Web Socket Page",
                 ),
               ),
+              const SizedBox(
+                height: 12.0,
+              ),
+              MaterialButton(
+                color: Colors.green,
+                onPressed: () {
+                  Get.to(
+                    PrintPageView(),
+                  );
+                },
+                child: const Text(
+                  "Print PDF Page",
+                ),
+              ),
+              const SizedBox(
+                height: 12.0,
+              ),
+              MaterialButton(
+                color: Colors.green,
+                onPressed: () {
+                  Get.to(
+                    PrintThermalPageView(),
+                  );
+                },
+                child: const Text(
+                  "Print Thermal Page",
+                ),
+              ),
             ],
           ),
         ),

@@ -3,6 +3,8 @@
         "camera_page",
         "beranda",
         "web_socket",
+        "print_page",
+        "print_thermal_page",
         "geolocation"
     ],
     "module_directory_name": "module",
