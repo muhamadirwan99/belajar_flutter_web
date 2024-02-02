@@ -14,17 +14,6 @@ class CameraPageView extends StatefulWidget {
     controller.view = this;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Camera Page"),
-        leading: IconButton(
-          onPressed: () async {
-            Get.offAll(
-              BerandaView(),
-            );
-          },
-          icon: Icon(Icons.arrow_back),
-        ),
-      ),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(10.0),

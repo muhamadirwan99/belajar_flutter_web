@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:belajar_flutter_web/core.dart';
-import '../controller/geolocation_controller.dart';
 
 class GeolocationView extends StatefulWidget {
   const GeolocationView({Key? key}) : super(key: key);
@@ -9,10 +8,6 @@ class GeolocationView extends StatefulWidget {
     controller.view = this;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Geolocation"),
-        actions: const [],
-      ),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(10.0),

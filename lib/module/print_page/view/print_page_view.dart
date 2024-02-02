@@ -15,10 +15,6 @@ class PrintPageView extends StatefulWidget {
     controller.view = this;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("PrintPage"),
-        actions: const [],
-      ),
       body: PdfPreview(
         build: (format) => _generatePdf(format, "title"),
       ),

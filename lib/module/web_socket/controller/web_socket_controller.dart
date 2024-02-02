@@ -45,8 +45,6 @@ class WebSocketController extends State<WebSocketView> {
     client.eventStream.listen((event) {
       dynamic data = event.tryGetDataAsMap();
 
-      print("data");
-      print(data);
       if (data != null) {
         if (data["data"] != null) {
           if (data["data"]["success"]) {

@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:belajar_flutter_web/core.dart';
 
@@ -8,21 +9,21 @@ class BerandaView extends StatefulWidget {
     controller.view = this;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Beranda"),
-        actions: const [],
-      ),
       body: SingleChildScrollView(
         child: Container(
+          width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.all(10.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               MaterialButton(
+                minWidth: MediaQuery.of(context).size.width / 3,
                 color: Colors.green,
                 onPressed: () {
-                  Get.to(
-                    CameraPageView(cameras: controller.cameras),
+                  router.go(
+                    '/camera',
+                    extra: controller.cameras,
                   );
                 },
                 child: const Text(
@@ -30,59 +31,42 @@ class BerandaView extends StatefulWidget {
                 ),
               ),
               const SizedBox(
-                height: 12.0,
+                height: 24.0,
               ),
               MaterialButton(
+                minWidth: MediaQuery.of(context).size.width / 3,
                 color: Colors.green,
                 onPressed: () {
-                  Get.to(
-                    GeolocationView(),
-                  );
+                  router.push('/geolocation');
                 },
                 child: const Text(
                   "Geolocation Page",
                 ),
               ),
               const SizedBox(
-                height: 12.0,
+                height: 24.0,
               ),
               MaterialButton(
+                minWidth: MediaQuery.of(context).size.width / 3,
                 color: Colors.green,
                 onPressed: () {
-                  Get.to(
-                    WebSocketView(),
-                  );
+                  router.push('/websocketpage');
                 },
                 child: const Text(
                   "Web Socket Page",
                 ),
               ),
               const SizedBox(
-                height: 12.0,
+                height: 24.0,
               ),
               MaterialButton(
+                minWidth: MediaQuery.of(context).size.width / 3,
                 color: Colors.green,
                 onPressed: () {
-                  Get.to(
-                    PrintPageView(),
-                  );
+                  router.push('/printpdfpage');
                 },
                 child: const Text(
-                  "Print PDF Page",
-                ),
-              ),
-              const SizedBox(
-                height: 12.0,
-              ),
-              MaterialButton(
-                color: Colors.green,
-                onPressed: () {
-                  Get.to(
-                    PrintThermalPageView(),
-                  );
-                },
-                child: const Text(
-                  "Print Thermal Page",
+                  "Print Page",
                 ),
               ),
             ],
