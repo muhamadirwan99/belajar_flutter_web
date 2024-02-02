@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:belajar_flutter_web/core.dart';
-import '../view/print_page_view.dart';
 
 class PrintPageController extends State<PrintPageView> {
   static late PrintPageController instance;

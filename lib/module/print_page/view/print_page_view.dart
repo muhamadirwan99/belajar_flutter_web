@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:belajar_flutter_web/core.dart';
-import '../controller/print_page_controller.dart';
-
 import 'dart:typed_data';
-
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';

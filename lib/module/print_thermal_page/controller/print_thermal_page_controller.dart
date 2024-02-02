@@ -3,7 +3,6 @@ library usb_thermal_printer_web;
 import 'package:flutter/material.dart';
 import 'package:belajar_flutter_web/core.dart';
 import 'package:usb_thermal_printer_web/usb_thermal_printer_web.dart';
-import '../view/print_thermal_page_view.dart';
 
 class PrintThermalPageController extends State<PrintThermalPageView> {
   static late PrintThermalPageController instance;

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:belajar_flutter_web/core.dart';
-import '../controller/print_thermal_page_controller.dart';
 
 class PrintThermalPageView extends StatefulWidget {
   const PrintThermalPageView({Key? key}) : super(key: key);
