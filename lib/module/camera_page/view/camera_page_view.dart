@@ -30,38 +30,47 @@ class CameraPageView extends StatefulWidget {
                 Icons.camera_alt,
                 size: 100,
               ),
-              FutureBuilder<void>(
-                future: controller.initializeControllerFuture,
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.done) {
-                    return Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(8),
-                          ),
-                          child: Stack(
+              controller.cameraController.value.isInitialized
+                  ? FutureBuilder<void>(
+                      future: controller.initializeControllerFuture,
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.done) {
+                          return Column(
                             children: [
-                              AspectRatio(
-                                aspectRatio: 1 / 1,
-                                child:
-                                    CameraPreview(controller.cameraController),
+                              ClipRRect(
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(8),
+                                ),
+                                child: Stack(
+                                  children: [
+                                    AspectRatio(
+                                      aspectRatio: 1 / 1,
+                                      child: CameraPreview(
+                                          controller.cameraController),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              MaterialButton(
+                                onPressed: () async {
+                                  controller.hasCamera = false;
+                                  if (controller
+                                      .cameraController.value.isInitialized) {
+                                    controller.cameraController.dispose();
+                                    controller.update();
+                                  }
+                                },
+                                child: const Text("Close"),
                               ),
                             ],
-                          ),
-                        ),
-                        MaterialButton(
-                            onPressed: () {
-                              controller.cameraController.dispose();
-                            },
-                            child: const Text("Close")),
-                      ],
-                    );
-                  } else {
-                    return const Center(child: CircularProgressIndicator());
-                  }
-                },
-              ),
+                          );
+                        } else {
+                          return const Center(
+                              child: CircularProgressIndicator());
+                        }
+                      },
+                    )
+                  : Container(),
             ],
           ),
         ),
